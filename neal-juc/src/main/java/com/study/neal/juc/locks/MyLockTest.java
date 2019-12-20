@@ -1,9 +1,8 @@
 package com.study.neal.juc.locks;
 
-
-import com.study.neal.juc.locks.spin.CasSpinLock;
-import com.study.neal.juc.locks.spin.ClhSpinLock;
-import com.study.neal.juc.locks.spin.McsSpinLock;
+import com.study.neal.juc.locks.subject001.spin.CasSpinLock;
+import com.study.neal.juc.locks.subject001.spin.ClhSpinLock;
+import com.study.neal.juc.locks.subject001.spin.McsSpinLock;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
