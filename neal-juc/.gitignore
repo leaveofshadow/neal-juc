@@ -1,0 +1,33 @@
+*.class
+*.log
+
+# idea
+.idea
+*.iml
+*.iws
+*.ipr
+
+# eclipse
+.project
+.classpath
+.settings
+.apt_generated
+.factorypath
+.settings
+
+.git
+target
+/log
+/logs
+*.log
+*.swp
+
+# mac
+.DS_Store
+
+#jrebel
+*/rebel.xml
+
+# other
+/out
+*patch
