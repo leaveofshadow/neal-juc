@@ -39,11 +39,15 @@ public class MyReadWriteLock {
         }
     }
 
+    /**
+     * 此处readCount 和 writeCount使用两个原子类实现，但是并不能保证加锁的原子性
+     * 后续可以参考 {@link java.util.concurrent.locks.ReadWriteLock} 共用一个int型count的实现
+     */
     private AtomicInteger readCount = new AtomicInteger(0);
 
     private AtomicInteger writeCount = new AtomicInteger(0);
 
-    private AtomicReference<Thread> owner = new AtomicReference<>(null);
+    private Thread owner;
 
     private Queue<WaitNode> blockedQueue = new LinkedBlockingQueue<>();
 
@@ -59,12 +63,11 @@ public class MyReadWriteLock {
             int nextWriteCount = currentWriteCount + acquires;
             if (writeCount.compareAndSet(currentWriteCount, nextWriteCount)) {
                 // 抢到写锁
-                owner.set(currentThread);
+                owner = currentThread;
                 return true;
             }
         } else {
-            Thread currentOwner = owner.get();
-            if (currentOwner == currentThread) {
+            if (owner == currentThread) {
                 // 重入
                 int nextWriteCount = currentWriteCount + acquires;
                 writeCount.set(nextWriteCount);
@@ -77,14 +80,14 @@ public class MyReadWriteLock {
 
     public boolean tryUnlock(int releases) {
         final Thread currentThread = Thread.currentThread();
-        if (owner.get() != currentThread) {
+        if (owner != currentThread) {
             throw new IllegalMonitorStateException();
         } else {
             int currentWriteCount = writeCount.get();
             int nextCount = currentWriteCount - releases;
             writeCount.set(nextCount);
             if (nextCount == 0) {
-                owner.set(null);
+                owner = null;
                 // 在此之后，新加入的线程可能会抢到锁
                 return true;
             } else {
@@ -97,7 +100,7 @@ public class MyReadWriteLock {
         Thread currentThread = Thread.currentThread();
         // 多个线程同时抢读锁，只有修改成功才算加锁成功，所以此处使用cas + 自旋
         for (; ; ) {
-            if (writeCount.get() > 0 && currentThread != owner.get()) {
+            if (writeCount.get() > 0 && currentThread != owner) {
                 return -1;
             }
             int currentReadCount = readCount.get();

@@ -44,6 +44,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.*;
 
 /**
+ * neal: 源码学习
+ *
  * Provides a framework for implementing blocking locks and related
  * synchronizers (semaphores, events, etc) that rely on
  * first-in-first-out (FIFO) wait queues.  This class is designed to
