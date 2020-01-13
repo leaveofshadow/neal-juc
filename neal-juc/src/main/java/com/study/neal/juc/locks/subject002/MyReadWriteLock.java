@@ -12,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
  * 当前写占用线程 owner 实现写锁的排他性
  * 等待队列  blockedQueue
  *
- * @author yedunyao
+ * @author neal
  * @date 2019/11/23 16:51
  */
 public class MyReadWriteLock {

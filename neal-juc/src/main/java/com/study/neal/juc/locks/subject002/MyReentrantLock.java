@@ -38,7 +38,7 @@ import java.util.concurrent.locks.LockSupport;
  *           count == 0  owner置为null
  *           count > 0 count--
  *
- * @author yedunyao
+ * @author neal
  * @date 2019/11/23 14:51
  */
 public class MyReentrantLock extends MyLock {

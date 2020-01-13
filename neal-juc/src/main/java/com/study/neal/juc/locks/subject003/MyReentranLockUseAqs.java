@@ -5,7 +5,7 @@ import com.study.neal.juc.locks.subject003.source.AbstractQueuedSynchronizer;
 
 
 /**
- * @author yedunyao
+ * @author neal
  * @since 2019/12/20 16:14
  */
 public class MyReentranLockUseAqs extends MyLock {
