@@ -1,4 +1,4 @@
-package com.study.neal.juc.concurrent;
+package com.study.neal.juc.concurrent.collection;
 
 import java.util.AbstractQueue;
 import java.util.Collection;
