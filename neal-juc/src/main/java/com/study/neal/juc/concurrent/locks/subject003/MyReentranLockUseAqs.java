@@ -1,12 +1,11 @@
-package com.study.neal.juc.locks.subject003;
+package com.study.neal.juc.concurrent.locks.subject003;
 
-import com.study.neal.juc.locks.MyLock;
-import com.study.neal.juc.locks.subject003.source.AbstractQueuedSynchronizer;
+import com.study.neal.juc.concurrent.locks.MyLock;
+import com.study.neal.juc.concurrent.locks.subject003.source.AbstractQueuedSynchronizer;
 
 
 /**
- * @author neal
- * @since 2019/12/20 16:14
+ *
  */
 public class MyReentranLockUseAqs extends MyLock {
 

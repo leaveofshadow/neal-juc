@@ -1,7 +1,7 @@
-package com.study.neal.juc.locks.subject001.spin;
+package com.study.neal.juc.concurrent.locks.subject001.spin;
 
-import com.study.neal.juc.locks.MyLock;
-import com.study.neal.juc.locks.MyLockTest;
+import com.study.neal.juc.concurrent.locks.MyLock;
+import com.study.neal.juc.concurrent.locks.MyLockTest;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -17,8 +17,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * 而各个线程利用ThreadLocal方法，保存自己的node。
  * 通过判断上一个线程是否释放锁，决定是自旋等待还是获取锁后的继续执行。
  *
- * @author neal
- * @date 2018/10/24 10:04
  */
 public class ClhSpinLock extends MyLock {
 //    private final ThreadLocal<Node> prev;

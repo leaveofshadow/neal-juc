@@ -1,16 +1,15 @@
-package com.study.neal.juc.locks;
+package com.study.neal.juc.concurrent.locks;
 
-import com.study.neal.juc.locks.subject001.spin.CasSpinLock;
-import com.study.neal.juc.locks.subject001.spin.ClhSpinLock;
-import com.study.neal.juc.locks.subject001.spin.McsSpinLock;
+import com.study.neal.juc.concurrent.locks.subject001.spin.CasSpinLock;
+import com.study.neal.juc.concurrent.locks.subject001.spin.ClhSpinLock;
+import com.study.neal.juc.concurrent.locks.subject001.spin.McsSpinLock;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @author neal
- * @date 2018/10/24 10:05
+ *
  */
 public class MyLockTest {
 

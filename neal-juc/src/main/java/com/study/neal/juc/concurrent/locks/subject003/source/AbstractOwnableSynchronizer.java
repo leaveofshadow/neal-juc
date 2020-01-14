@@ -33,7 +33,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package com.study.neal.juc.locks.subject003.source;
+package com.study.neal.juc.concurrent.locks.subject003.source;
 
 /**
  * neal: 源码学习

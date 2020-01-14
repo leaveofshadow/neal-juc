@@ -1,7 +1,7 @@
-package com.study.neal.juc.locks.subject001.spin;
+package com.study.neal.juc.concurrent.locks.subject001.spin;
 
-import com.study.neal.juc.locks.MyLock;
-import com.study.neal.juc.locks.MyLockTest;
+import com.study.neal.juc.concurrent.locks.MyLock;
+import com.study.neal.juc.concurrent.locks.MyLockTest;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -15,8 +15,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * 但当线程数不停增加时，性能下降明显，因为每个线程都需要执行，占用CPU时间。
  * 如果线程竞争不激烈，并且保持锁的时间段。适合使用自旋锁。
  *
- * @author neal
- * @since  2018/10/26 14:28
  */
 public class CasSpinLock extends MyLock {
 

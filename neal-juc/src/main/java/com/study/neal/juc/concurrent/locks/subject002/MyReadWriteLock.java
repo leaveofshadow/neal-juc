@@ -1,9 +1,8 @@
-package com.study.neal.juc.locks.subject002;
+package com.study.neal.juc.concurrent.locks.subject002;
 
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
 /**
@@ -11,9 +10,6 @@ import java.util.concurrent.locks.LockSupport;
  * 当前写线程数量 writeCount
  * 当前写占用线程 owner 实现写锁的排他性
  * 等待队列  blockedQueue
- *
- * @author neal
- * @date 2019/11/23 16:51
  */
 public class MyReadWriteLock {
 

@@ -1,12 +1,11 @@
-package com.study.neal.juc.locks;
+package com.study.neal.juc.concurrent.locks;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 /**
- * @author neal
- * @date 2018/10/26 14:47
+ *
  */
 public abstract class MyLock implements Lock {
 

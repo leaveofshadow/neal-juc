@@ -1,7 +1,7 @@
-package com.study.neal.juc.locks.subject001.spin;
+package com.study.neal.juc.concurrent.locks.subject001.spin;
 
-import com.study.neal.juc.locks.MyLock;
-import com.study.neal.juc.locks.MyLockTest;
+import com.study.neal.juc.concurrent.locks.MyLock;
+import com.study.neal.juc.concurrent.locks.MyLockTest;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -9,9 +9,6 @@ import java.util.concurrent.atomic.AtomicReference;
  * MSC Spin Lock
  *
  * 同CLH，
- *
- * @author neal
- * @date 2018/10/29 0:29
  */
 public class McsSpinLock extends MyLock {
 

@@ -1,14 +1,13 @@
-package com.study.neal.juc.locks.subject002;
+package com.study.neal.juc.concurrent.locks.subject002;
 
 
-import com.study.neal.juc.locks.MyLock;
+import com.study.neal.juc.concurrent.locks.MyLock;
 
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.LockSupport;
 
 /**
@@ -37,9 +36,6 @@ import java.util.concurrent.locks.LockSupport;
  *      否则
  *           count == 0  owner置为null
  *           count > 0 count--
- *
- * @author neal
- * @date 2019/11/23 14:51
  */
 public class MyReentrantLock extends MyLock {
 
