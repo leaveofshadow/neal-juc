@@ -33,7 +33,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package com.study.neal.juc.concurrent.threadpool;
+package com.study.neal.juc.concurrent.threadpool.source;
 
 import java.util.concurrent.RejectedExecutionException;
 

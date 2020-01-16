@@ -33,7 +33,7 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-package com.study.neal.juc.concurrent.threadpool;
+package com.study.neal.juc.concurrent.threadpool.source;
 
 import java.util.*;
 import java.util.concurrent.*;
@@ -1360,7 +1360,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
                 return;
             c = ctl.get();
         }
-        if (isRunning(c) && workQueue.offer(command)) {
+        if (isRunning(c) && workQueue.offer(command)) { // neal: 加入队列失败， 则会创建新的工作线程处理任务，tomcat的TaskQueue重写了offer功能，监控线程池状态，优先创建worker线程
             int recheck = ctl.get();
             if (! isRunning(recheck) && remove(command))
                 reject(command);
