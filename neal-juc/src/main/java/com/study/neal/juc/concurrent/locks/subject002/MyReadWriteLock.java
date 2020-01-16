@@ -94,7 +94,7 @@ public class MyReadWriteLock {
 
     public int tryLockShared(int acquires) {
         Thread currentThread = Thread.currentThread();
-        // 多个线程同时抢读锁，只有修改成功才算加锁成功，所以此处使用cas + 自旋
+        // 读锁使用cas + 自旋使多个线程直接加锁
         for (; ; ) {
             if (writeCount.get() > 0 && currentThread != owner) {
                 return -1;
